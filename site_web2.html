@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Boost Manager - Features</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        body { font-family: 'Roboto', sans-serif; }
+
+        .faq-item details > summary { list-style: none; }
+        .faq-item details > summary::-webkit-details-marker { display: none; }
+        .faq-item details[open] .plus-icon { display: none; }
+        .faq-item details:not([open]) .minus-icon { display: none; }
+
+        /* Carousel */
+        .image-carousel { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .image-carousel::-webkit-scrollbar { display: none; }
+        .image-carousel > div { scroll-snap-align: start; }
+
+        /* Popup window */
+        #popupForm {
+            display: none;
+        }
+    </style>
+
+    <script>
+    function openPopup() {
+        document.getElementById("popupForm").style.display = "flex";
+    }
+    function closePopup() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+</script>
+
+</head>
+<body class="bg-gray-100">
+
+
+<!-- Popup Form -->
+<div id="popupForm" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white w-full max-w-md p-8 rounded-lg shadow-lg relative">
+        <button onclick="closePopup()" class="absolute top-3 right-3 text-gray-600 hover:text-black">
+            <span class="material-icons">close</span>
+        </button>
+
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">Contact Us</h2>
+
+        <form class="space-y-4">
+            <div>
+                <label class="block text-gray-700 font-medium">Name</label>
+                <input type="text" class="w-full rounded-lg border-gray-300" required>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium">Phone</label>
+                <input type="text" class="w-full rounded-lg border-gray-300" required>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium">Email</label>
+                <input type="email" class="w-full rounded-lg border-gray-300" required>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium">Type of Company</label>
+                <select class="w-full rounded-lg border-gray-300">
+                    <option>Personne Physique</option>
+                    <option>Personne Morale</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium">Comment</label>
+                <textarea class="w-full rounded-lg border-gray-300" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
+                Send
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="flex flex-col min-h-screen">
+
+
+<header class="bg-white shadow-sm sticky top-0 z-10">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center space-x-3">
+  <img src="ressources/africanviolet.png" alt="Boost Manager Logo" class="h-10 w-10 object-contain">
+  <span class="text-2xl font-bold text-gray-800">Boost Manager</span>
+</div>
+
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-gray-700 hover:text-blue-600 font-medium" href="#features">Features</a>
+<a class="text-gray-700 hover:text-blue-600 font-medium" href="#demo">Demo</a>
+<a class="text-gray-700 hover:text-blue-600 font-medium" href="#pricing">Pricing</a>
+<a class="text-gray-700 hover:text-blue-600 font-medium" href="#faq">FAQ</a>
+<a class="text-gray-700 hover:text-blue-600 font-medium" href="#contact">Contact</a>
+</nav>
+
+
+    <!-- Removed Login button -->
+    <div class="hidden md:flex items-center">
+        <button onclick="openPopup()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-medium">
+            Get Started for free
+        </button>
+    </div>
+
+    <button class="md:hidden p-2 rounded-md hover:bg-gray-200">
+        <span class="material-icons text-gray-600">menu</span>
+    </button>
+</div>
+</header>
+<main class="flex-1">
+<!-- HERO -->
+<section class="relative bg-blue-600 text-white">
+<div class="absolute inset-0 z-10 pointer-events-none">
+    <img src="ressources/work.png" alt="" class="w-full h-full opacity-70 object-cover">
+</div>
+
+<div class="relative z-20 container mx-auto px-6 py-24 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Streamline Your Business with Our ERP Software</h1>
+    <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+        A powerful, all-in-one solution to manage your sales, clients, inventory, and finances efficiently.
+    </p>
+    <button onclick="openPopup()" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-200">
+        Get Started for Free
+    </button>
+</div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="py-20 bg-white" id="features">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">Core Features</h2>
+      <p class="text-gray-600 mt-2">Everything you need to run your business in one place.</p>
+    </div>
+
+    <div class="grid gap-16 md:grid-cols-2">
+
+      <!-- Feature 1 -->
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="h-12 w-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+            <span class="material-icons text-3xl">dashboard</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800">Intuitive Dashboard</h3>
+        </div>
+        <p class="text-gray-600">Get a clear overview of your key business metrics.</p>
+        <div class="image-carousel flex overflow-x-auto snap-x snap-mandatory rounded-lg shadow-xl w-full">
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_1.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_2.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="h-12 w-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+            <span class="material-icons text-3xl">people</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800">Client Management</h3>
+        </div>
+        <p class="text-gray-600">Track and manage your customers easily.</p>
+        <div class="image-carousel flex overflow-x-auto snap-x snap-mandatory rounded-lg shadow-xl w-full">
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_3.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_4.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="h-12 w-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
+            <span class="material-icons text-3xl">shopping_cart</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800">Sales &amp; Invoicing</h3>
+        </div>
+        <p class="text-gray-600">Create quotes, process orders, and generate invoices quickly.</p>
+        <div class="image-carousel flex overflow-x-auto snap-x snap-mandatory rounded-lg shadow-xl w-full">
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_5.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="h-12 w-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">
+            <span class="material-icons text-3xl">inventory</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800">Inventory Control</h3>
+        </div>
+        <p class="text-gray-600">Track stock levels, manage purchase orders, and optimize your supply chain efficiently.</p>
+        <div class="image-carousel flex overflow-x-auto snap-x snap-mandatory rounded-lg shadow-xl w-full">
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_6.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="h-12 w-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center">
+            <span class="material-icons text-3xl">assessment</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800">Financial Reporting</h3>
+        </div>
+        <p class="text-gray-600">Automate accounting processes and generate insightful reports for decisions.</p>
+        <div class="image-carousel flex overflow-x-auto snap-x snap-mandatory rounded-lg shadow-xl w-full">
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_7.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="h-12 w-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center">
+            <span class="material-icons text-3xl">settings</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800">Customizable Settings</h3>
+        </div>
+        <p class="text-gray-600">Adapt the software to your business needs with flexible configuration options.</p>
+        <div class="image-carousel flex overflow-x-auto snap-x snap-mandatory rounded-lg shadow-xl w-full">
+          <div class="flex-shrink-0 w-full">
+            <img src="ressources/africanviolet_8.png" class="w-full aspect-video object-cover rounded-lg">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-gray-50" id="demo">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">See It in Action</h2>
+<p class="text-gray-600 mt-2">Watch a short demo to see how our ERP can transform your business.</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="aspect-[16/9] rounded-lg shadow-2xl overflow-hidden">
+    <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        class="w-full h-full"
+    ></iframe>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white" id="pricing">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Flexible Pricing Plans</h2>
+<p class="text-gray-600 mt-2">Choose a plan that scales with your business.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-lg p-8 flex flex-col">
+<h3 class="text-2xl font-semibold text-gray-800 text-center mb-2">Starter</h3>
+<p class="text-gray-500 text-center mb-6">For small businesses and startups.</p>
+<div class="text-center my-4">
+<span class="text-4xl font-bold text-gray-900">$49</span>
+<span class="text-gray-500">/month</span>
+</div>
+<ul class="space-y-4 text-gray-600 flex-grow mb-8">
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>Up to 10 users</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>Core Features Included</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>Basic Reporting</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>Email Support</span>
+</li>
+</ul>
+<a class="bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg text-center hover:bg-gray-300 transition duration-300 mt-auto" href="#">Choose Plan</a>
+</div>
+<div class="bg-blue-600 text-white rounded-lg shadow-lg p-8 flex flex-col relative">
+<div class="absolute top-0 right-0 -mt-4 mr-4">
+<span class="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
+</div>
+<h3 class="text-2xl font-semibold text-center mb-2">Professional</h3>
+<p class="text-blue-200 text-center mb-6">For growing businesses.</p>
+<div class="text-center my-4">
+<span class="text-4xl font-bold">$99</span>
+<span>/month</span>
+</div>
+<ul class="space-y-4 flex-grow mb-8">
+<li class="flex items-center">
+<span class="material-icons mr-2">check</span>
+<span>Up to 50 users</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons mr-2">check</span>
+<span>All Core Features</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons mr-2">check</span>
+<span>Advanced Reporting &amp; Analytics</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons mr-2">check</span>
+<span>Priority Email &amp; Phone Support</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons mr-2">check</span>
+<span>API Access</span>
+</li>
+</ul>
+<a class="bg-white text-blue-600 font-bold py-3 px-6 rounded-lg text-center hover:bg-gray-200 transition duration-300 mt-auto" href="#">Choose Plan</a>
+</div>
+<div class="bg-white rounded-lg shadow-lg p-8 flex flex-col">
+<h3 class="text-2xl font-semibold text-gray-800 text-center mb-2">Enterprise</h3>
+<p class="text-gray-500 text-center mb-6">For large organizations.</p>
+<div class="text-center my-4">
+<span class="text-4xl font-bold text-gray-900">Custom</span>
+</div>
+<ul class="space-y-4 text-gray-600 flex-grow mb-8">
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>Unlimited Users</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>All Features Included</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>Dedicated Account Manager</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>On-premise Deployment Option</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons text-green-500 mr-2">check</span>
+<span>24/7 Premium Support</span>
+</li>
+</ul>
+<a class="bg-gray-800 text-white font-bold py-3 px-6 rounded-lg text-center hover:bg-gray-900 transition duration-300 mt-auto" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50" id="faq">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Frequently Asked Questions</h2>
+<p class="text-gray-600 mt-2">Find answers to common questions about our ERP software.</p>
+</div>
+<div class="max-w-3xl mx-auto space-y-6">
+<div class="faq-item bg-white rounded-lg shadow-sm">
+<details class="p-6">
+<summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                    Is my data secure with your ERP system?
+                                    <span class="text-blue-600">
+<span class="material-icons plus-icon">add_circle_outline</span>
+<span class="material-icons minus-icon">remove_circle_outline</span>
+</span>
+</summary>
+<p class="mt-4 text-gray-600">
+                                    Absolutely. We prioritize data security with state-of-the-art encryption, regular security audits, and robust access control measures to ensure your business data is always protected.
+                                </p>
+</details>
+</div>
+<div class="faq-item bg-white rounded-lg shadow-sm">
+<details class="p-6">
+<summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                    Can the software be customized to my business needs?
+                                    <span class="text-blue-600">
+<span class="material-icons plus-icon">add_circle_outline</span>
+<span class="material-icons minus-icon">remove_circle_outline</span>
+</span>
+</summary>
+<p class="mt-4 text-gray-600">
+                                    Yes, our ERP software is highly customizable. You can configure modules, workflows, and reports to match your specific business processes. For extensive customizations, our Enterprise plan offers dedicated support.
+                                </p>
+</details>
+</div>
+<div class="faq-item bg-white rounded-lg shadow-sm">
+<details class="p-6">
+<summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                    What kind of support do you offer?
+                                    <span class="text-blue-600">
+<span class="material-icons plus-icon">add_circle_outline</span>
+<span class="material-icons minus-icon">remove_circle_outline</span>
+</span>
+</summary>
+<p class="mt-4 text-gray-600">
+                                    We offer different levels of support based on your plan. All plans include email support. The Professional plan adds phone support, and the Enterprise plan includes a dedicated account manager and 24/7 premium support.
+                                </p>
+</details>
+</div>
+<div class="faq-item bg-white rounded-lg shadow-sm">
+<details class="p-6">
+<summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
+                                    Can I integrate the ERP with other software I use?
+                                    <span class="text-blue-600">
+<span class="material-icons plus-icon">add_circle_outline</span>
+<span class="material-icons minus-icon">remove_circle_outline</span>
+</span>
+</summary>
+<p class="mt-4 text-gray-600">
+                                    Yes, our Professional and Enterprise plans include API access, allowing you to integrate our ERP with other third-party applications like e-commerce platforms, payment gateways, and marketing automation tools.
+                                </p>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="relative py-20 bg-blue-600 overflow-hidden">
+  
+  <!-- BACKGROUND IMAGE -->
+  <div class="absolute inset-0">
+      <img src="ressources/work.png" 
+           class="w-full h-full object-cover opacity-70" 
+           alt="Background Work Image">
+  </div>
+
+  <!-- BLUE OVERLAY FOR BETTER READABILITY -->
+  <div class="absolute inset-0 bg-blue-600 bg-opacity-60"></div>
+
+  <div class="relative container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white">Contact Us</h2>
+      <p class="text-blue-100 mt-2">Our team will reach out to you shortly.</p>
+    </div>
+
+    <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <form class="space-y-4">
+
+        <div>
+          <label class="block text-gray-700 font-medium">Name</label>
+          <input type="text" class="w-full rounded-lg border-gray-300" required>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium">Phone</label>
+          <input type="text" class="w-full rounded-lg border-gray-300" required>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium">Email</label>
+          <input type="email" class="w-full rounded-lg border-gray-300" required>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium">Type of Company</label>
+          <select class="w-full rounded-lg border-gray-300">
+            <option>Personne Physique</option>
+            <option>Personne Morale</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium">Comment</label>
+          <textarea class="w-full rounded-lg border-gray-300" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
+          Send
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="bg-gray-800 text-white">
+<div class="container mx-auto px-6 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p>© 2026 Boost Manager. All Rights Reserved.</p>
+<div class="flex space-x-4 mt-4 md:mt-0">
+<a class="hover:text-blue-400" href="javascript:void(0)" onclick="openPrivacy()">Privacy Policy</a>
+<a class="hover:text-blue-400" href="javascript:void(0)" onclick="openTerms()">Terms of Service</a>
+</div>
+</div>
+</div>
+
+<!-- Privacy Policy Popup -->
+<div id="privacyPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+    <div class="bg-white w-full max-w-2xl p-8 rounded-lg shadow-lg relative">
+        <button onclick="closePrivacy()" class="absolute top-3 right-3 text-gray-600 hover:text-black">
+            <span class="material-icons">close</span>
+        </button>
+
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">Privacy Policy</h2>
+
+        <p class="text-gray-700 leading-relaxed">
+            This is where your privacy policy text will appear...
+            <br><br>
+            You can paste your full document here.
+        </p>
+    </div>
+</div>
+<!-- Terms of Service Popup -->
+<div id="termsPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+    <div class="bg-white w-full max-w-2xl p-8 rounded-lg shadow-lg relative">
+        <button onclick="closeTerms()" class="absolute top-3 right-3 text-gray-600 hover:text-black">
+            <span class="material-icons">close</span>
+        </button>
+
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">Terms of Service</h2>
+
+        <p class="text-gray-700 leading-relaxed">
+            This is where your terms of service text will appear...
+            <br><br>
+            You can paste your full terms document here.
+        </p>
+    </div>
+</div>
+<script>
+function openPrivacy() {
+    document.getElementById("privacyPopup").style.display = "flex";
+}
+function closePrivacy() {
+    document.getElementById("privacyPopup").style.display = "none";
+}
+
+function openTerms() {
+    document.getElementById("termsPopup").style.display = "flex";
+}
+function closeTerms() {
+    document.getElementById("termsPopup").style.display = "none";
+}
+</script>
+
+
+</footer>
+</div>
+</body></html>
